@@ -23,7 +23,7 @@ public class RegistrationCompleteEventListener implements ApplicationListener<Re
         //Create verification token for User
         User user = event.getUser();
         String token = UUID.randomUUID().toString();
-        userService.saveVerificationTokenForUser(token,user);
+        userService.saveVerificationTokenForUser(token,user); // save token in token repo
 
         //send Mail to User
         String url = event.getApplicationUrl()
